@@ -25,9 +25,9 @@ const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
 // connectAuthEmulator
-connectAuthEmulator(auth, "http://127.0.0.1:9099");
 
 if (window.location.hostname === "localhost") {
+  connectAuthEmulator(auth, "http://127.0.0.1:9099");
   connectFirestoreEmulator(db, "127.0.0.1", 8080);
 }
 export { analytics, db, auth, googleProvider, app };
