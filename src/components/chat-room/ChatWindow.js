@@ -145,7 +145,7 @@ export default function ChatWindow() {
                 Invite
               </Button>
               <Avatar.Group size={"small"} maxCount={2}>
-                {members.map((member) => (
+                {members?.map((member) => (
                   <Tooltip title={member.displayName} key={member.id}>
                     <Avatar src={member.photoURL}>
                       {member?.photoURL
@@ -159,13 +159,13 @@ export default function ChatWindow() {
           </HeaderStyle>
           <ContentStyled>
             <MessageListStyles>
-              {message.map((mes) => (
+              {message?.map((mes) => (
                 <Message
                   key={mes.id}
                   text={mes.text}
                   displayName={mes.displayName}
                   photoUrl={mes.photoURL}
-                  createdAt={mes.createdAt.seconds}
+                  createdAt={mes.createdAt?.seconds}
                 />
               ))}
             </MessageListStyles>
